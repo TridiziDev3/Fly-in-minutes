@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import { IoIosSearch } from "react-icons/io";
 import wave from "../../assets/Home/Vector1.svg";
@@ -48,8 +48,20 @@ import Destination1 from "../../assets/Home/Destination1.svg";
 import Destination2 from "../../assets/Home/Destination2.svg";
 import Destination3 from "../../assets/Home/Destination3.svg";
 import Destination4 from "../../assets/Home/Destination4.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const Home = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Optional: Set the duration of animations
+      easing: "ease-in-out", // Optional: Set the easing function
+      // once: true, // Optional: Ensures animations run only once
+    });
+  }, []);
+
   return (
     <div className="home_main_container">
       <div className="home_banner_container">
@@ -153,7 +165,7 @@ const Home = () => {
           <h3>We Offer Best Services</h3>
         </div>
         <div className="home_category_boxes">
-          <div className="home_category_box1">
+          <div className="home_category_box1" data-aos="fade-right">
             <div className="home_category_box1_img">
               <img src={boximg1} alt="boximg1" />
             </div>
@@ -164,7 +176,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="home_category_box2">
+          <div className="home_category_box2" data-aos="fade-up">
             <div className="home_category_box2_wrapper">
               <div className="home_category_box1_img">
                 <img src={boximg3} alt="boximg3" />
@@ -178,7 +190,7 @@ const Home = () => {
             </div>
             <div className="home_category_box2_back"></div>
           </div>
-          <div className="home_category_box1">
+          <div className="home_category_box1" data-aos="fade-down">
             <div className="home_category_box1_img">
               <img src={boximg2} alt="boximg2" />
             </div>
@@ -190,7 +202,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <div className="home_category_box1">
+            <div className="home_category_box1" data-aos="fade-left">
               <div className="home_category_box1_img">
                 <img src={boximg4} alt="boximg4" />
               </div>
@@ -224,6 +236,8 @@ const Home = () => {
       <div className="home_section3_sml_img">
         <img src={bgElement} alt="bgElement" />
       </div>
+
+      
       <div className="home_section4">
         <div className="home_section4_left">
           <h4>Fast & Easy</h4>
@@ -352,7 +366,7 @@ const Home = () => {
           </div>
           <div className="home_section6_blur"></div>
           <div className="home_section6_bg_img">
-            <img src={BackgroundElement1} alt="BackgroundElement1"/>
+            <img src={BackgroundElement1} alt="BackgroundElement1" />
           </div>
           <div className="home_section6_sml_imgs">
             <img src={Destination1} alt="Destination1" />

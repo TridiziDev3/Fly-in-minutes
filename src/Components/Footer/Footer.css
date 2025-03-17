@@ -1,0 +1,133 @@
+.footer_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.footer_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7vw;
+  position: relative;
+}
+.footer_side_img {
+  position: absolute;
+  left: 58vw;
+  top: -0.5vw;
+  z-index: -1;
+}
+.footer_side_img img{
+    width: 28vw;
+}
+.footer_top_navigations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+}
+.footer_top_link_div {
+  display: flex;
+  flex-direction: column;
+  width: 12vw;
+}
+.footer_top_link_text p {
+  color: #757095;
+  font-size: 1.2vw;
+}
+.footer_top_links {
+  display: flex;
+  gap: 0.8vw;
+  margin-top: -1vw;
+}
+.footer_top_links p {
+  font-size: 1.2vw;
+  margin-top: 1vw;
+  color: #553214;
+}
+.footer_top_company {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.footer_top_company h3 {
+  font-size: 1.8vw;
+  color: #181433;
+}
+.footer_top_company ul {
+  margin-top: -1vw;
+  margin-left: -2.5vw;
+  cursor: pointer;
+}
+.footer_top_company ul li {
+  list-style: none;
+  font-size: 1.2vw;
+  margin-top: 1vw;
+  color: #181433;
+}
+.footer_top_destination {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.footer_top_destination h3 {
+  font-size: 1.8vw;
+  color: #181433;
+}
+.footer_top_destination ul {
+  margin-top: -1vw;
+  margin-left: -2.5vw;
+  cursor: pointer;
+}
+.footer_top_destination ul li {
+  list-style: none;
+  font-size: 1.2vw;
+  margin-top: 1vw;
+  color: #181433;
+}
+.footer_top_contact{
+    margin-top: -1.7vw;
+}
+.footer_top_contact_top h3 {
+  font-size: 1.8vw;
+  color: #181433;
+}
+.footer_top_contact_mail{
+    position: relative;
+}
+.footer_top_contact_mail input {
+  background-color: #eeeeff;
+  border: none;
+  outline: none;
+  font-size: 1.1vw;
+  padding: 1vw;
+  color: #181433;
+}
+.footer_top_contact_mail button{
+    background-color: #553214;
+    color: white;
+    font-size: 1vw;
+    box-shadow: 0px 14.23px 24.9px 0px #DF695126;
+    padding: 1.02vw 2vw; 
+    border: none;
+    outline:  none;
+    border-radius: 0.5vw;
+    position: absolute;
+    left: 15vw;
+    cursor: pointer;
+}
+.footer_top_contact_txt p{
+    font-size: 1.1vw;
+    color: #181433;
+    width: 21vw;
+}
+.footer_btm_line{
+    /* border: 1px solid #E5E5EA; */
+    width: 60vw;
+    height: 0.1vw;
+    background-color: #E5E5EA;
+    margin: 2vw 0vw 1vw 0vw;
+}

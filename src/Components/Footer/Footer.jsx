@@ -6,7 +6,7 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-import footerImg from "../../assets/Footer/footerImg.svg";
+import footerImg from "../../assets/Footer/FooterImg.svg";
 import { motion } from "framer-motion";
 
 const Footer = () => {

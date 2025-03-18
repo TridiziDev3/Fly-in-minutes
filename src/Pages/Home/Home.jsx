@@ -220,7 +220,7 @@ const Home = () => {
           <h3>We Offer Best Services</h3>
         </div>
         <div className="home_category_boxes">
-          <div className="home_category_box1" >
+          {/* <div className="home_category_box1">
             <div className="home_category_box1_img">
               <img src={boximg1} alt="boximg1" />
             </div>
@@ -230,6 +230,20 @@ const Home = () => {
                 sunt qui repellat saepe quo velit aperiam id aliquam placeat.
               </p>
             </div>
+          </div> */}
+          <div className="home_category_box2">
+            <div className="home_category_box2_wrapper">
+              <div className="home_category_box1_img">
+                <img src={boximg1} alt="boximg1" />
+              </div>
+              <div className="home_category_box1_txt">
+                <h3>Road Trips</h3>
+                <p>
+                  sunt qui repellat saepe quo velit aperiam id aliquam placeat.
+                </p>
+              </div>
+            </div>
+            <div className="home_category_box2_back"></div>
           </div>
           <div className="home_category_box2">
             <div className="home_category_box2_wrapper">
@@ -245,7 +259,7 @@ const Home = () => {
             </div>
             <div className="home_category_box2_back"></div>
           </div>
-          <div className="home_category_box1">
+          {/* <div className="home_category_box1">
             <div className="home_category_box1_img">
               <img src={boximg2} alt="boximg2" />
             </div>
@@ -255,8 +269,22 @@ const Home = () => {
                 sunt qui repellat saepe quo velit aperiam id aliquam placeat.{" "}
               </p>
             </div>
+          </div> */}
+          <div className="home_category_box2">
+            <div className="home_category_box2_wrapper">
+              <div className="home_category_box1_img">
+                <img src={boximg2} alt="boximg2" />
+              </div>
+              <div className="home_category_box1_txt">
+                <h3>Religious Tours</h3>
+                <p>
+                  sunt qui repellat saepe quo velit aperiam id aliquam placeat.{" "}
+                </p>
+              </div>
+            </div>
+            <div className="home_category_box2_back"></div>
           </div>
-          <div>
+          {/* <div>
             <div className="home_category_box1">
               <div className="home_category_box1_img">
                 <img src={boximg4} alt="boximg4" />
@@ -268,7 +296,20 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <div className="last_box_dot"></div>
+          </div> */}
+          <div className="home_category_box2">
+            <div className="home_category_box2_wrapper">
+              <div className="home_category_box1_img">
+                <img src={boximg4} alt="boximg4" />
+              </div>
+              <div className="home_category_box1_txt">
+                <h3>Historical Tours</h3>
+                <p>
+                  sunt qui repellat saepe quo velit aperiam id aliquam placeat.{" "}
+                </p>
+              </div>
+            </div>
+            <div className="home_category_box2_back"></div>
           </div>
         </div>
       </div>
@@ -326,7 +367,6 @@ const Home = () => {
         <img src={bgElement} alt="bgElement" />
       </div>
 
-      
       <div className="home_section4">
         <div
           className="home_section4_left"
@@ -467,15 +507,17 @@ const Home = () => {
           </motion.button>
         </div>
         <div className="home_section6_imgs">
-          <div className="home_section6_large_img">
-            <div className="home_section6_large_img_brdr">
-              <img src={promotionL} alt="promotionL" />
+          <div data-aos="fade-left" data-aos-delay="600">
+            <div className="home_section6_large_img">
+              <div className="home_section6_large_img_brdr">
+                <img src={promotionL} alt="promotionL" />
+              </div>
             </div>
+            <div className="home_section6_large_img_text">
+              <h3>Heart Felting Place in India</h3>
+            </div>
+            <div className="home_section6_blur"></div>
           </div>
-          <div className="home_section6_large_img_text">
-            <h3>Heart Felting Place in India</h3>
-          </div>
-          <div className="home_section6_blur"></div>
           <div className="home_section6_bg_img">
             <img src={BackgroundElement1} alt="BackgroundElement1" />
           </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Home.css";
 import { IoIosSearch } from "react-icons/io";
 import wave from "../../assets/Home/Vector1.svg";
@@ -50,7 +50,7 @@ import Destination3 from "../../assets/Home/Destination3.svg";
 import Destination4 from "../../assets/Home/Destination4.svg";
 import doubleQuotes from "../../assets/Home/doubleQuotes.svg";
 import testimonial1 from "../../assets/Home/testimonial1.svg";
-import Travel_Concepts_2 from "../../assets/Home/Travel_Concepts_2.svg";
+import Travel_Concepts_2 from "../../assets/Home/Travel_Concepts_2.png";
 import TripBig from "../../assets/Home/TripBig.svg";
 import trip1 from "../../assets/Home/trip1.svg";
 import trip2 from "../../assets/Home/trip2.svg";
@@ -62,6 +62,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
+import shell from "../../assets/Home/shell.png";
+import framePhoto from "../../assets/Home/framePhoto.svg";
+import nature from "../../assets/Home/nature.mp4";
 
 const PrevArrow = ({ onClick }) => {
   return (
@@ -116,11 +119,28 @@ const Home = () => {
       },
     ],
   };
+  const videoRef = useRef(null);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.disablePictureInPicture = true; // Direct property (Chrome/Edge)
+      if (video.requestPictureInPicture) {
+        video.addEventListener("enterpictureinpicture", (e) => {
+          video.exitPictureInPicture(); // Exit PiP if triggered
+        });
+      }
+    }
+  }, []);
   return (
     <div className="home_main_container">
       <div className="home_banner_container">
         <div className="home_banner_content">
+          <div className="videos">
+            <video autoPlay muted loop playsInline className="background-video" ref={videoRef}>
+              <source src={nature} type="video/mp4" />
+            </video>
+          </div>
           <div className="home_banner_top">
             <div className="home_banner_top_wrapper">
               <img src={wave} alt="wave" />
@@ -870,31 +890,7 @@ const Home = () => {
           <h4>TESTIMONIALS</h4>
           <h3>See What Our Clients Say About Us</h3>
         </div>
-        {/* <div className="home_testimonials_div">
-          <h3>
-            <Avatar
-              alt="testimonial1"
-              src={avatar1}
-              sx={{
-                border: "none !important",
-                outline: "none !important",
-                left: "0.5vw",
-                width: "8vw",
-                height: "8vw",
-              }}
-            />
-          </h3>
-          <div className="home_testimonials_quote">
-            <img src={doubleQuotes} alt="doubleQuotes" />
-          </div>
-          <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
-          </p>
-          <h4>Christine Beckam - Designer</h4>
-        </div> */}
+
         <div className="carousel">
           <Slider {...settings}>
             <div className="home_testimonials_div">
@@ -1001,6 +997,12 @@ const Home = () => {
         </div>
         <div className="home_testimonials_side_img">
           <img src={Travel_Concepts_2} alt="Travel_Concepts_2" />
+        </div>
+        <div className="home_testimonial_shell_img">
+          <img src={shell} alt="shell" />
+        </div>
+        <div className="home_testimonial_framePhoto">
+          <img src={framePhoto} alt="framePhoto" />
         </div>
       </div>
     </div>

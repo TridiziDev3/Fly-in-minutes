@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import logo from "../../assets/Navbar/FlyInMinute.svg";
+import logo from "../../assets/Navbar/Logo.svg";
 import { motion } from "framer-motion";
 
 const Navbar = () => {

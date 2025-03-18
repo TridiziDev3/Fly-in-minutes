@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 68vw;
+  gap: 70vw;
   padding: 1.3vw 5vw 1vw 0vw;
   /* border: 1px solid; */
   width: 100%;
+  height: 2vw;
   overflow: hidden;
   background-color: white;
   position: relative;
@@ -13,6 +14,8 @@
 }
 .navbar_logo img {
   width: 13vw;
+  /* height: 5vw; */
+  cursor: pointer;
 }
 .navbar_buttons {
   display: flex;

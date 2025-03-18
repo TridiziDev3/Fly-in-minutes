@@ -79,7 +79,7 @@ const Footer = () => {
       </div>
       <div className="footer_btm_line"></div>
       <div className="footer_btm">
-        <p>Copyright @ Spice Circuit 2022. All Rights Reserved.</p>
+        <p>Copyright @ Fly In Minutes 2022. All Rights Reserved.</p>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-
+import nature from "../../assets/Home/nature.mp4";
 const PrevArrow = ({ onClick }) => {
   return (
     <div onClick={onClick}>
@@ -167,109 +167,10 @@ const SlickCarousel = () => {
     //     <img src={Travel_Concepts_2} alt="Travel_Concepts_2" />
     //   </div>
     // </div>
-    <div className="carousel">
-      <Slider {...settings}>
-        <div className="home_testimonials_div">
-          <h3>
-            <Avatar
-              alt="testimonial1"
-              src={avatar1}
-              sx={{
-                border: "none !important",
-                outline: "none !important",
-                left: "0.5vw",
-                width: "8vw",
-                height: "8vw",
-              }}
-            />
-          </h3>
-          <div className="home_testimonials_quote">
-            <img src={doubleQuotes} alt="doubleQuotes" />
-          </div>
-          <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
-          </p>
-          <h4>Christine Beckam - Designer</h4>
-        </div>
-        <div className="home_testimonials_div">
-          <h3>
-            <Avatar
-              alt="testimonial1"
-              src={avatar2}
-              sx={{
-                border: "none !important",
-                outline: "none !important",
-                left: "0.5vw",
-                width: "8vw",
-                height: "8vw",
-              }}
-            />
-          </h3>
-          <div className="home_testimonials_quote">
-            <img src={doubleQuotes} alt="doubleQuotes" />
-          </div>
-          <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
-          </p>
-          <h4>Christine Beckam - Designer</h4>
-        </div>
-        <div className="home_testimonials_div">
-          <h3>
-            <Avatar
-              alt="testimonial1"
-              src={avatar3}
-              sx={{
-                border: "none !important",
-                outline: "none !important",
-                left: "0.5vw",
-                width: "8vw",
-                height: "8vw",
-              }}
-            />
-          </h3>
-          <div className="home_testimonials_quote">
-            <img src={doubleQuotes} alt="doubleQuotes" />
-          </div>
-          <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
-          </p>
-          <h4>Christine Beckam - Designer</h4>
-        </div>
-        <div className="home_testimonials_div">
-          <h3>
-            <Avatar
-              alt="testimonial1"
-              src={avatar4}
-              sx={{
-                border: "none !important",
-                outline: "none !important",
-                left: "0.5vw",
-                width: "8vw",
-                height: "8vw",
-              }}
-            />
-          </h3>
-          <div className="home_testimonials_quote">
-            <img src={doubleQuotes} alt="doubleQuotes" />
-          </div>
-          <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
-          </p>
-          <h4>Christine Beckam - Designer</h4>
-        </div>
-      </Slider>
+    <div className="videos">
+      <video autoPlay muted loop playsInline className="background-video">
+        <source src={nature} type="video/mp4" />
+      </video>
     </div>
   );
 };

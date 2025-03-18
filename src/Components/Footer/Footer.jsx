@@ -7,6 +7,8 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import footerImg from "../../assets/Footer/footerImg.svg";
+import { motion } from "framer-motion";
+
 const Footer = () => {
   return (
     <div className="footer_container">
@@ -56,7 +58,16 @@ const Footer = () => {
           </div>
           <div className="footer_top_contact_mail">
             <input type="email" placeholder="Your email address" />
-            <button>Subscribe</button>
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            style={{
+              background: "#553214",
+              outline: "none",
+            }}
+          >
+            Subscribe
+          </motion.button>
+            {/* <button>Subscribe</button> */}
           </div>
           <div className="footer_top_contact_txt">
             <p>* Will send you weekly updates for your better tour packages.</p>

@@ -45,6 +45,7 @@
   font-size: 1.2vw;
   margin-top: 1vw;
   color: #553214;
+  cursor: pointer;
 }
 .footer_top_company {
   display: flex;

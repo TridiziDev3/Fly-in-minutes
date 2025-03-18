@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import { IoIosSearch } from "react-icons/io";
 import wave from "../../assets/Home/Vector1.svg";
@@ -48,8 +48,75 @@ import Destination1 from "../../assets/Home/Destination1.svg";
 import Destination2 from "../../assets/Home/Destination2.svg";
 import Destination3 from "../../assets/Home/Destination3.svg";
 import Destination4 from "../../assets/Home/Destination4.svg";
+import doubleQuotes from "../../assets/Home/doubleQuotes.svg";
+import testimonial1 from "../../assets/Home/testimonial1.svg";
+import Travel_Concepts_2 from "../../assets/Home/Travel_Concepts_2.svg";
+import TripBig from "../../assets/Home/TripBig.svg";
+import trip1 from "../../assets/Home/trip1.svg";
+import trip2 from "../../assets/Home/trip2.svg";
+import trip3 from "../../assets/Home/trip3.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
+import { motion } from "framer-motion";
+
+const PrevArrow = ({ onClick }) => {
+  return (
+    <div onClick={onClick} className="home_left_btn">
+      <p>
+        <HiArrowLongLeft />
+      </p>
+    </div>
+  );
+};
+
+const NextArrow = ({ onClick }) => {
+  return (
+    <div onClick={onClick} className="home_right_btn">
+      <p>
+        <HiArrowLongRight />
+      </p>
+    </div>
+  );
+};
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: false,
+    });
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024, // Medium screens
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // Small screens
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="home_main_container">
       <div className="home_banner_container">
@@ -207,9 +274,34 @@ const Home = () => {
       </div>
       <div className="home_section3">
         <div className="home_section3_left">
-          <img src={section3Img} alt="section3Img" />
+          <div
+            className="home_section3_left_sml_img1"
+            data-aos="fade-down"
+            // data-aos-delay="600"
+          >
+            <img src={trip1} alt="trip1" />
+          </div>
+          <div
+            className="home_section3_left_sml_img2"
+            data-aos="fade-up-right"
+            // data-aos-delay="200"
+          >
+            <img src={trip2} alt="trip2" />
+          </div>
+          <div
+            className="home_section3_left_sml_img3"
+            data-aos="fade-down-right"
+            // data-aos-delay="200"
+          >
+            <img src={trip3} alt="trip3" />
+          </div>
+          <div className="home_section_left_big_img" data-aos="fade-right">
+            <div className="home_section_left_big_img_bdr">
+              <img src={TripBig} alt="tripbig" />
+            </div>
+          </div>
         </div>
-        <div className="home_section3_right">
+        <div className="home_section3_right" data-aos="fade-left">
           <h4>Historical Trips</h4>
           <h3>Our Historic Tropical Destinations</h3>
           <p>
@@ -218,14 +310,27 @@ const Home = () => {
             corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut
             ducimus illum aut optio quibusdam!
           </p>
-          <button>View Packages</button>
+          {/* <button>View Packages</button> */}
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            style={{
+              background: "#553214",
+              outline: "none",
+            }}
+          >
+            View Packages
+          </motion.button>
         </div>
       </div>
       <div className="home_section3_sml_img">
         <img src={bgElement} alt="bgElement" />
       </div>
       <div className="home_section4">
-        <div className="home_section4_left">
+        <div
+          className="home_section4_left"
+          data-aos="fade-down"
+          data-aos-delay="600"
+        >
           <h4>Fast & Easy</h4>
           <h3>Get Your Home Stay Travel Bookings</h3>
           <div className="home_section4_Left_box_container">
@@ -268,7 +373,13 @@ const Home = () => {
           </div>
         </div>
         <div className="home_section4_right">
-          <div className="home_section4_right_aero">
+          <div
+            className="home_section4_right_aero"
+            data-aos="fade-down-right"
+            data-aos-delay="600"
+            // data-aos-offset="300"
+            // data-aos-easing="ease-in-sine"
+          >
             <img src={aero} alt="aero" />
           </div>
           <div className="home_section4_right_card">
@@ -302,7 +413,11 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="home_section4_right_sml_card">
+          <div
+            className="home_section4_right_sml_card"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
             <div className="home_section4_right_sml_card_img">
               <img src={girl} alt="girl" />
             </div>
@@ -338,10 +453,18 @@ const Home = () => {
             corrupti et fugiat nulla qui soluta recusandae in maxime quasi aut
             ducimus illum aut optio quibusdam!
           </p>
-          <button>View Packages</button>
+
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            style={{
+              background: "#553214",
+              outline: "none",
+            }}
+          >
+            View Packages
+          </motion.button>
         </div>
         <div className="home_section6_imgs">
-
           <div className="home_section6_large_img">
             <div className="home_section6_large_img_brdr">
               <img src={promotionL} alt="promotionL" />
@@ -352,7 +475,7 @@ const Home = () => {
           </div>
           <div className="home_section6_blur"></div>
           <div className="home_section6_bg_img">
-            <img src={BackgroundElement1} alt="BackgroundElement1"/>
+            <img src={BackgroundElement1} alt="BackgroundElement1" />
           </div>
           <div className="home_section6_sml_imgs">
             <img src={Destination1} alt="Destination1" />
@@ -434,13 +557,31 @@ const Home = () => {
           <h4>Promotion</h4>
           <h3>Explore Nature</h3>
           <img src={line1} alt="line1" />
-          <button>View Packages</button>
+          {/* <button>View Packages</button> */}
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            style={{
+              background: "none",
+              outline: "none",
+            }}
+          >
+            View Packages
+          </motion.button>
         </div>
         <div className="home_section8_right">
           <h4>Promotion</h4>
           <h3>Explore Cities</h3>
           <img src={line2} alt="line2" />
-          <button>View Packages</button>
+          {/* <button>View Packages</button> */}
+          <motion.button
+            whileTap={{ scale: 0.85 }}
+            style={{
+              background: "none",
+              outline: "none",
+            }}
+          >
+            View Packages
+          </motion.button>{" "}
         </div>
       </div>
       <div className="home_section9">
@@ -450,6 +591,7 @@ const Home = () => {
         </div>
         <div className="home_section9_btm_cards">
           <div className="home_section9_btm_card">
+            <div className="home_section9_blur"></div>
             <div className="home_section9_btm_card_img">
               <img src={package1} alt="package1" />
             </div>
@@ -512,7 +654,17 @@ const Home = () => {
               </div>
             </div>
             <div className="home_section9_btm_card_button">
-              <button>Explore Now</button>
+              <motion.button
+                whileTap={{ scale: 0.85 }}
+                style={{
+                  border: "none",
+                  background: "#553214",
+                  outline: "none",
+                }}
+              >
+                {/* <button>Explore Now</button> */}
+                Explore Now
+              </motion.button>
             </div>
           </div>
           <div className="home_section9_btm_card">
@@ -578,7 +730,17 @@ const Home = () => {
               </div>
             </div>
             <div className="home_section9_btm_card_button">
-              <button>Explore Now</button>
+              <motion.button
+                whileTap={{ scale: 0.85 }}
+                style={{
+                  border: "none",
+                  background: "#553214",
+                  outline: "none",
+                }}
+              >
+                {/* <button>Explore Now</button> */}
+                Explore Now
+              </motion.button>
             </div>
           </div>
           <div className="home_section9_btm_card">
@@ -644,15 +806,157 @@ const Home = () => {
               </div>
             </div>
             <div className="home_section9_btm_card_button">
-              <button>Explore Now</button>
+              <motion.button
+                whileTap={{ scale: 0.85 }}
+                style={{
+                  border: "none",
+                  background: "#553214",
+                  outline: "none",
+                }}
+              >
+                {/* <button>Explore Now</button> */}
+                Explore Now
+              </motion.button>
             </div>
           </div>
         </div>
       </div>
       <div className="home_testimonials">
-        <div>
+        <div className="home_testimonials_headings">
           <h4>TESTIMONIALS</h4>
           <h3>See What Our Clients Say About Us</h3>
+        </div>
+        {/* <div className="home_testimonials_div">
+          <h3>
+            <Avatar
+              alt="testimonial1"
+              src={avatar1}
+              sx={{
+                border: "none !important",
+                outline: "none !important",
+                left: "0.5vw",
+                width: "8vw",
+                height: "8vw",
+              }}
+            />
+          </h3>
+          <div className="home_testimonials_quote">
+            <img src={doubleQuotes} alt="doubleQuotes" />
+          </div>
+          <p>
+            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
+            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
+            provident quo possimus impedit vel doloremque obcaecati qui ullam
+            consectetur et ipsum omnis.
+          </p>
+          <h4>Christine Beckam - Designer</h4>
+        </div> */}
+        <div className="carousel">
+          <Slider {...settings}>
+            <div className="home_testimonials_div">
+              <h3>
+                <Avatar
+                  alt="testimonial1"
+                  src={avatar1}
+                  sx={{
+                    border: "none !important",
+                    outline: "none !important",
+                    left: "0.5vw",
+                    width: "8vw",
+                    height: "8vw",
+                  }}
+                />
+              </h3>
+              <div className="home_testimonials_quote">
+                <img src={doubleQuotes} alt="doubleQuotes" />
+              </div>
+              <p>
+                Vel officiis dolor ea illo aut eligendi ullam non laudantium
+                magnam et recusandae molestiae sit iure unde aut voluptate
+                quaerat. Id sunt provident quo possimus impedit vel doloremque
+                obcaecati qui ullam consectetur et ipsum omnis.
+              </p>
+              <h4>Christine Beckam - Designer</h4>
+            </div>
+            {/* <div className="home_testimonials_div">
+              <h3>
+                <Avatar
+                  alt="testimonial1"
+                  src={avatar2}
+                  sx={{
+                    border: "none !important",
+                    outline: "none !important",
+                    left: "0.5vw",
+                    width: "8vw",
+                    height: "8vw",
+                  }}
+                />
+              </h3>
+              <div className="home_testimonials_quote">
+                <img src={doubleQuotes} alt="doubleQuotes" />
+              </div>
+              <p>
+                Vel officiis dolor ea illo aut eligendi ullam non laudantium
+                magnam et recusandae molestiae sit iure unde aut voluptate
+                quaerat. Id sunt provident quo possimus impedit vel doloremque
+                obcaecati qui ullam consectetur et ipsum omnis.
+              </p>
+              <h4>Christine Beckam - Designer</h4>
+            </div> */}
+            <div className="home_testimonials_div">
+              <h3>
+                <Avatar
+                  alt="testimonial1"
+                  src={avatar3}
+                  sx={{
+                    border: "none !important",
+                    outline: "none !important",
+                    left: "0.5vw",
+                    width: "8vw",
+                    height: "8vw",
+                  }}
+                />
+              </h3>
+              <div className="home_testimonials_quote">
+                <img src={doubleQuotes} alt="doubleQuotes" />
+              </div>
+              <p>
+                Vel officiis dolor ea illo aut eligendi ullam non laudantium
+                magnam et recusandae molestiae sit iure unde aut voluptate
+                quaerat. Id sunt provident quo possimus impedit vel doloremque
+                obcaecati qui ullam consectetur et ipsum omnis.
+              </p>
+              <h4>Christine Beckam - Designer</h4>
+            </div>
+            <div className="home_testimonials_div">
+              <h3>
+                <Avatar
+                  alt="testimonial1"
+                  src={avatar4}
+                  sx={{
+                    border: "none !important",
+                    outline: "none !important",
+                    left: "0.5vw",
+                    width: "8vw",
+                    height: "8vw",
+                  }}
+                />
+              </h3>
+              <div className="home_testimonials_quote">
+                <img src={doubleQuotes} alt="doubleQuotes" />
+              </div>
+              <p>
+                Vel officiis dolor ea illo aut eligendi ullam non laudantium
+                magnam et recusandae molestiae sit iure unde aut voluptate
+                quaerat. Id sunt provident quo possimus impedit vel doloremque
+                obcaecati qui ullam consectetur et ipsum omnis.
+              </p>
+              <h4>Christine Beckam - Designer</h4>
+            </div>
+          </Slider>
+        </div>
+        <div className="home_testimonials_side_img">
+          <img src={Travel_Concepts_2} alt="Travel_Concepts_2" />
         </div>
       </div>
     </div>

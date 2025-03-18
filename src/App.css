@@ -6,3 +6,6 @@ body, html{
   justify-content: center;
   overflow-x: hidden;
 }
+.app_footer{
+  margin-top: -6vw;
+}

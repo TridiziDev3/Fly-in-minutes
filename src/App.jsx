@@ -3,18 +3,20 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer";
+import SlickCarousel from "./Components/SlickCarousel/SlickCarousel";
 
 function App() {
   return (
-    <div className="app_wrapper">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route  path="/carousel" element={<SlickCarousel/>}/>
+      </Routes>
+      <div className="app_footer">
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

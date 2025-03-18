@@ -220,7 +220,7 @@ const Home = () => {
           <h3>We Offer Best Services</h3>
         </div>
         <div className="home_category_boxes">
-          <div className="home_category_box1" data-aos="fade-right">
+          <div className="home_category_box1" >
             <div className="home_category_box1_img">
               <img src={boximg1} alt="boximg1" />
             </div>
@@ -231,7 +231,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="home_category_box2" data-aos="fade-up">
+          <div className="home_category_box2">
             <div className="home_category_box2_wrapper">
               <div className="home_category_box1_img">
                 <img src={boximg3} alt="boximg3" />
@@ -245,7 +245,7 @@ const Home = () => {
             </div>
             <div className="home_category_box2_back"></div>
           </div>
-          <div className="home_category_box1" data-aos="fade-down">
+          <div className="home_category_box1">
             <div className="home_category_box1_img">
               <img src={boximg2} alt="boximg2" />
             </div>
@@ -257,7 +257,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <div className="home_category_box1" data-aos="fade-left">
+            <div className="home_category_box1">
               <div className="home_category_box1_img">
                 <img src={boximg4} alt="boximg4" />
               </div>

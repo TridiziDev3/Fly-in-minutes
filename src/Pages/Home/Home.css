@@ -690,6 +690,9 @@
   z-index: -1;
   animation: upDown 2s ease-in-out infinite;
 }
+.home_section4_right_img img{
+  width: 8vw;
+}
 .home_section4_right_aero {
   position: relative;
   z-index: -1;
@@ -1071,6 +1074,9 @@ padding: 0.5vw 0vw 0.5vw 0vw;
   left: -44.1vw;
   top: 27vw;
   animation: upDown 2s ease-in-out infinite;
+}
+.home_section6_bg_img img{
+  width: 8vw;
 }
 .home_testimonials {
   display: flex;
